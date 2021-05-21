@@ -1,6 +1,6 @@
-export const getPlaces = async () => {
-    const response = await fetch(`${process.env.BASE_URL}/places`);
-    if (response.ok) {
+export const getOnePlace = async (id) => {
+    const response = await fetch(`${process.env.BASE_URL}/places/${id}`);
+    if(response.ok) {
         const result = await response.json();
         return result.map(
             ({

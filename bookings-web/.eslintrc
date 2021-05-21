@@ -18,7 +18,7 @@
     "no-console": "warn",
     "indent": [
       "error",
-      2,
+      4,
       {
         "SwitchCase": 1
       }
@@ -51,7 +51,7 @@
             "after": false
           },
           "if": {
-            "after": false
+            "after": true
           },
           "switch": {
             "after": false

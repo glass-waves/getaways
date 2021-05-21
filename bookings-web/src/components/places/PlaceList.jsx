@@ -4,32 +4,32 @@ import Place from './Place';
 import styles from './place.css';
 
 const PlaceList = ({ places }) => {
-  return (
-    <div className={styles.container}>
-      {places.map((place) => (
-        <Place key={place.id} {...place} />
-      ))}
-      ;
-    </div>
-  );
+    return (
+        <div className={styles.container}>
+            {places.map((place) => (
+                <Place key={place.id} {...place} />
+            ))}
+            ;
+        </div>
+    );
 };
 
 PlaceList.propTypes = {
-  places: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      location: PropTypes.string.isRequired,
-      pricePerNight: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      imageThumbnail: PropTypes.string.isRequired,
-      maxGuests: PropTypes.number.isRequired,
-      petFriendly: PropTypes.bool.isRequired,
-      pool: PropTypes.bool.isRequired,
-      wifi: PropTypes.bool.isRequired,
-    })
-  ).isRequired,
+    places: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            location: PropTypes.string.isRequired,
+            pricePerNight: PropTypes.number.isRequired,
+            image: PropTypes.string.isRequired,
+            imageThumbnail: PropTypes.string.isRequired,
+            maxGuests: PropTypes.number.isRequired,
+            petFriendly: PropTypes.bool.isRequired,
+            pool: PropTypes.bool.isRequired,
+            wifi: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
 };
 
 export default PlaceList;
