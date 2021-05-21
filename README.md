@@ -20,7 +20,7 @@ npm start
 ```
 
 ### Lab Ideas
-- [ ] Add "Loading..." State (1 point)
+- [x] Add "Loading..." State (1 point)
 - [ ] Style Places List (2 points)
 - [ ] Add Place Detail Page (3 points)
 - [ ] Add User Registration Page (2 points)
