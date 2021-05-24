@@ -2,7 +2,9 @@ export const getOnePlace = async (id) => {
     const response = await fetch(`${process.env.BASE_URL}/places/${id}`);
     if(response.ok) {
         const result = await response.json();
-        return result.map(
+        const resultArr = [result];
+        console.log(resultArr);
+        return resultArr.map(
             ({
                 price_per_night,
                 image_thumbnail,
