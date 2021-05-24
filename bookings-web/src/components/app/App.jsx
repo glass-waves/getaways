@@ -1,6 +1,6 @@
 import React from 'react';
 import Getaways from '../../containers/Getaways';
-import { DetailContainer } from '../../containers/DetailContainer'
+import { DetailContainer } from '../../containers/DetailContainer';
 import {
     BrowserRouter as Router,
     Switch,

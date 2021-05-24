@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Detail } from '../components/places/Detail';
 import { getOnePlace } from '../services/getOnePlace';
-import { useParams } from 'react-router-dom' 
+import { useParams } from 'react-router-dom'; 
 
 export const DetailContainer = () => {
     const [place, setPlace] = useState(null);

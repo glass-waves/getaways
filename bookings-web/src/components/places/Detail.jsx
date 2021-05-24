@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Detail = ({ place }) => {
+    console.log(place);
     const placeObj = place[0];
     return (
         <div>
@@ -11,9 +12,9 @@ export const Detail = ({ place }) => {
             <p>Price: {placeObj.pricePerNight}</p>
             <img src={placeObj.image} alt={placeObj.description} />
             <li>Max Guests: {placeObj.maxGuests}</li>
-            <li>Pet Friendly: {placeObj.petFriendly}</li>
-            <li>Pool: {placeObj.pool}</li>
-            <li>Wifi: {placeObj.wifi}</li>
+            <li>Pet Friendly: {placeObj.petFriendly && <span>yes</span>}</li>
+            <li>Pool: {placeObj.pool ? <span>yes</span> : <span>no</span>}</li>
+            <li>Wifi: {placeObj.wifi ? <span>yes</span> : <span>no</span>}</li>
         </div>
     );
 };

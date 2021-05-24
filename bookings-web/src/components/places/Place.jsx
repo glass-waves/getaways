@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './place.css';
 import { Link } from 'react-router-dom';
 
-
 const Place = ({
     name,
     id,
@@ -21,7 +20,8 @@ const Place = ({
         <Link to={id}>
             <div className={styles.place}>
                 <h2>
-                    {name} <span className={styles.price}>${pricePerNight}</span>
+                    {name}{' '}
+                    <span className={styles.price}>${pricePerNight}</span>
                 </h2>
                 {/* <p>{description}</p> */}
                 <h4>{location}</h4>
@@ -37,6 +37,7 @@ const Place = ({
 };
 
 Place.propTypes = {
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
