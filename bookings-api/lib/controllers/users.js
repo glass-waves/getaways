@@ -4,7 +4,6 @@ const { Router } = require('express');
 const User = require('../models/User');
 
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
-
 module.exports = Router()
   .post('/create', async (req, res, next) => {
     const password = bcrypt.hashSync(req.body.password, 10);
@@ -23,7 +22,7 @@ module.exports = Router()
   .post('/login', async (req, res, next) => {
     try {
       const { token, user } = await User.authorize(req.body);
-
+      console.log(user);
       res.cookie('session', token, {
         httpOnly: true,
         maxAge: ONE_DAY_IN_MS,
@@ -41,7 +40,15 @@ module.exports = Router()
     res.clearCookie('session');
     res
       .status(200)
-      .json({ success: true, message: 'Logged out succcessfully!' });
+      .json({ success: true, message: 'Logged out successfully!' });
+  })
+  .get('/getByEmail/:email', async (req, res, next) => {
+    try {
+      const user = await User.find({email: req.params.email});
+      res.send(user);
+    } catch (err) {
+      next(err);
+    }
   })
   .get('/:id', async (req, res, next) => {
     try {
@@ -50,4 +57,5 @@ module.exports = Router()
     } catch (err) {
       next(err);
     }
-  });
+  })
+;

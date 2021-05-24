@@ -6,6 +6,8 @@ import {
     Switch,
     Route
 } from 'react-router-dom';
+import { SignupContainer } from '../../containers/SignupContainer';
+import { LoginContainer } from '../../containers/LoginContainer';
 
 export default function App() {
     return (
@@ -13,6 +15,8 @@ export default function App() {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Getaways} />
+                    <Route exact path="/signup" component={SignupContainer} />
+                    <Route exact path="/login" component={LoginContainer} />
                     <Route exact path="/:id" component={DetailContainer} />
                 </Switch>
             </Router>
