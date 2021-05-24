@@ -24,7 +24,7 @@ export const LoginContainer = () => {
             });
             const userJson = await user.json();
             alert(`Logged in as ${userJson.username}`);
-            // history.push('/');
+            history.push('/');
         } catch(error) {
             alert(error);
         }

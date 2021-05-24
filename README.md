@@ -24,7 +24,7 @@ npm start
 - [x] Style Places List (2 points)
 - [x] Add Place Detail Page (3 points)
 - [x] Add User Registration Page (2 points)
-- [ ] Add Login Page (2 points)
+- [x] Add Login Page (2 points)
 - [ ] Add Logout Page (2 points)
 - [ ] Create "Edit User" Endpoint (1 point)
 - [ ] Create "Edit User" Page (2 points)
