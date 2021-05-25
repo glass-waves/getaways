@@ -1,6 +1,6 @@
 export const getOnePlace = async (id) => {
     const response = await fetch(`${process.env.BASE_URL}/places/${id}`);
-    if(response.ok) {
+    if (response.ok) {
         const result = await response.json();
         const resultArr = [result];
         console.log(resultArr);

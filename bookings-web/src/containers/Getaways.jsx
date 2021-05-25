@@ -3,10 +3,11 @@ import { getPlaces } from '../services/placesApi';
 import PlaceList from '../components/places/PlaceList';
 // import styles from './outer.css';
 
-const Getaways = () => {
+const Getaways = ({ updateUser }) => {
     const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
+        updateUser();
         getPlaces().then(setPlaces).then(setLoading(false));
     }, []);
     if (loading) return <h1>Loading...</h1>;
@@ -15,7 +16,7 @@ const Getaways = () => {
             <header>
                 <h1>Getaway!</h1>
             </header>
-            <PlaceList places={places} />;
+            <PlaceList places={places} />
         </>
     );
 };
