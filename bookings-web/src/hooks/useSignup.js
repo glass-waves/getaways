@@ -18,7 +18,6 @@ export const useSignup = () => {
             `${process.env.BASE_URL}/users/getByEmail/${email}`
         );
         const existing = await existingUser.json();
-        console.log(existing, 'existing user line 20');
 
         if (existing.length) {
             alert('Account with that email already exists');

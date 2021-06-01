@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useEditUser } from '../hooks/useEditUser';
 
+// eslint-disable-next-line react/prop-types
 const EditUserContainer = ({ updateUser }) => {
     const {
         username,
