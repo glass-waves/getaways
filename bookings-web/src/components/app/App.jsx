@@ -6,6 +6,7 @@ import { SignupContainer } from '../../containers/SignupContainer';
 import { LoginContainer } from '../../containers/LoginContainer';
 import { checkIfLoggedIn } from '../../services/checkIfLoggedIn';
 import { Header } from '../header/Header';
+import EditUserContainer from '../../containers/EditUserContainer';
 
 export default function App() {
     const [user, setUser] = useState(null);
@@ -19,7 +20,7 @@ export default function App() {
             }
         });
     };
-    
+
     return (
         <div>
             <Router>
@@ -34,6 +35,17 @@ export default function App() {
                     />
                     <Route exact path="/signup" component={SignupContainer} />
                     <Route exact path="/login" component={LoginContainer} />
+                    <Route
+                        exact
+                        path="/edituser"
+                        render={(routeProps) => (
+                            <EditUserContainer
+                                {...routeProps}
+                                updateUser={updateUser}
+                            />
+                        )}
+                    />
+
                     <Route exact path="/:id" component={DetailContainer} />
                 </Switch>
             </Router>

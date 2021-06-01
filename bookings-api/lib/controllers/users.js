@@ -55,18 +55,21 @@ module.exports = Router()
     res.json(req.user);
   })
   .put('/:id', verifyToken, async (req, res, next) => {
-    const { email } = req.user;
-    const {newEmail, newPassword, newUsername} = req.body;
-
+    const { email, username } = req.user;
+    const {newEmail, newUsername} = req.body;
+    const setEmail = newEmail || email;
+    const setUsername = newUsername || username;
     try {
       const updated = await User.findOneAndUpdate({ email }, {
         email: setEmail,
-        username: setUsername,
-      })
+        username: setUsername, 
+      }, {new: true})
+      res.json(updated);
     } catch (error) {
       next(error)
     }
   })
+
   .get('/:id', async (req, res, next) => {
     try {
       const user = await User.findOne({ _id: req.params.id });

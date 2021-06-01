@@ -10,4 +10,8 @@ module.exports = Router()
     .get('/:id', async (req, res, next) => {
         const place = await Place.findOne({ _id: req.params.id });
         res.json(place);
+    })
+    .delete('/deleteAll', async (req, res, next) => {
+        const response = await Place.deleteMany({wifi: true});
+        res.json(response);
     });

@@ -1,26 +1,42 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { useEditUser } from '../hooks/useEditUser';
 
-const EditUserContainer = (props) => {
+const EditUserContainer = ({ updateUser }) => {
+    const {
+        username,
+        email,
+        setEmail,
+        setUsername,
+        onSubmit
+    } = useEditUser();
+
+    useEffect(() => {
+        updateUser();
+    }, []);
+
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <label htmlFor="">
                 Update Username
-                <input id="username" type="text" />
+                <input
+                    id="username"
+                    type="text"
+                    value={username}
+                    onChange={({ target }) => setUsername(target.value)}
+                />
             </label>
             <label htmlFor="">
                 Update Email
-                <input id="email" type="text" />
-            </label>
-            <label htmlFor="">
-                Update Password
-                <input id="password" type="text" />
+                <input
+                    id="email"
+                    type="text"
+                    value={email}
+                    onChange={({ target }) => setEmail(target.value)}
+                />
             </label>
             <button>Update</button>
         </form>
     );
 };
-
-EditUserContainer.propTypes = {};
 
 export default EditUserContainer;
