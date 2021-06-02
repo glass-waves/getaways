@@ -1,0 +1,24 @@
+.root {
+    display: flex;
+    justify-content: center;
+}
+.place {
+    border: 1px black solid;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 10px;
+}
+.place img {
+    max-width: 70%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
