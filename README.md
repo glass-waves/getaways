@@ -31,6 +31,6 @@ npm start
 - [x] Add Places List Pagination (1 point)
 - [ ] Add API Tests (1 point)
 - [ ] Add Front End Tests (3 points)
-- [ ] Add "Create Booking" Page (4 points)
+- [x] Add "Create Booking" Page (4 points)
 - [ ] Create "Cancel Booking" Endpoint (2 points)
 - [ ] Add "Cancel Booking" Page (2 points)
