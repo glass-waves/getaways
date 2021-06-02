@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export const Detail = ({ place }) => {
     console.log(place);
@@ -15,6 +16,7 @@ export const Detail = ({ place }) => {
             <li>Pet Friendly: {placeObj.petFriendly && <span>yes</span>}</li>
             <li>Pool: {placeObj.pool ? <span>yes</span> : <span>no</span>}</li>
             <li>Wifi: {placeObj.wifi ? <span>yes</span> : <span>no</span>}</li>
+            <Link to={`/book/${placeObj.id}`}>Book</Link>
         </div>
     );
 };
@@ -32,6 +34,7 @@ Detail.propTypes = {
             petFriendly: PropTypes.bool.isRequired,
             pool: PropTypes.bool.isRequired,
             wifi: PropTypes.bool.isRequired,
+            id: PropTypes.string.isRequired
         })),
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import Getaways from '../../containers/Getaways';
 import { DetailContainer } from '../../containers/DetailContainer';
@@ -7,6 +8,7 @@ import { LoginContainer } from '../../containers/LoginContainer';
 import { checkIfLoggedIn } from '../../services/checkIfLoggedIn';
 import { Header } from '../header/Header';
 import EditUserContainer from '../../containers/EditUserContainer';
+import { CreateBookingContainer } from '../../containers/CreateBookingContainer';
 
 export default function App() {
     const [user, setUser] = useState(null);
@@ -47,6 +49,17 @@ export default function App() {
                     />
 
                     <Route exact path="/:id" component={DetailContainer} />
+                    <Route
+                        exact
+                        path="/book/:id"
+                        render={(routeProps) => (
+                            <CreateBookingContainer
+                                {...routeProps}
+                                updateUser={updateUser}
+                                user={user}
+                            />
+                        )}
+                    />
                 </Switch>
             </Router>
         </div>
@@ -54,4 +67,3 @@ export default function App() {
 }
 
 //import router and create routes
-

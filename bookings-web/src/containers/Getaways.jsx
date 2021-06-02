@@ -20,10 +20,10 @@ const Getaways = ({ updateUser }) => {
         currentPage * perPage
     );
     const incrementPage = (e) => {
-        if (e.target.value === 'PREV'){
-            setCurrentPage((prevPage) => prevPage - 1);;
+        if (e.target.value === 'PREV') {
+            setCurrentPage((prevPage) => prevPage - 1);
         }
-        if (e.target.value === 'NEXT'){
+        if (e.target.value === 'NEXT') {
             setCurrentPage((prevPage) => prevPage + 1);
         }
     };
@@ -34,7 +34,6 @@ const Getaways = ({ updateUser }) => {
         if (currentPage === totalPages) setNext(true);
         if (currentPage !== 1) setPrev(false);
     }, [currentPage]);
-
 
     useEffect(() => {
         updateUser();
